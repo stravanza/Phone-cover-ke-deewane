@@ -5,9 +5,9 @@ import { ArrowRight } from 'lucide-react';
 import { buttonVariants } from './ui/button';
 
 const Header = async () => {
-  const { getuser } = getKindeServerSession();
-  const user = undefined;
-  console.log(getuser, 'getusergetuser');
+  const { getUser } = getKindeServerSession();
+  const user = await getUser();
+  console.log(user, 'useruser');
   const isAdmin = user?.email === process.env.ADMIN_EMAIL;
   return (
     <div className='sticky inset-x-0 top-0 h-16 w-full border-b border-gray-200 z-[999] backdrop-blur-xl transition-all '>
